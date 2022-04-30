@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   delete :logout, to: "sessions#logout"
   get :logged_in, to: "sessions#logged_in"
   get 'users/new'
+
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
-  resources :characters, :only => [:new, :create, :update, :destroy]
+  resources :characters, :only => [:index, :show, :new, :create, :update, :destroy]
+  resources :scores, :only => [:show]
 end
