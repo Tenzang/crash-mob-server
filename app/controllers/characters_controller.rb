@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
   def index
     respond_to do |format| 
-      format.json { render json: Character.all }
+      format.json { render json: Character.all.select(:id, :name, :role, :level, :race) }
     end 
   end
 
