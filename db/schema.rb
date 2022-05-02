@@ -21,18 +21,9 @@ ActiveRecord::Schema.define(version: 2022_05_01_232925) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ability_characters", force: :cascade do |t|
+  create_table "abilities_characters", force: :cascade do |t|
     t.integer "character_id"
-    t.integer "skill_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "character_skills", force: :cascade do |t|
-    t.integer "character"
-    t.integer "skill_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "ability_id"
   end
 
   create_table "characters", force: :cascade do |t|
@@ -44,6 +35,11 @@ ActiveRecord::Schema.define(version: 2022_05_01_232925) do
     t.integer "hitpoints"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "characters_skills", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "skill_id"
   end
 
   create_table "scores", force: :cascade do |t|

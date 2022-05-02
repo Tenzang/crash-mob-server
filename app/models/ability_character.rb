@@ -1,2 +1,0 @@
-class AbilityCharacter < ApplicationRecord
-end
