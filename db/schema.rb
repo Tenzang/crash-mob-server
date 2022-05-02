@@ -21,9 +21,24 @@ ActiveRecord::Schema.define(version: 2022_05_01_232925) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "abilities_characters", force: :cascade do |t|
     t.integer "character_id"
     t.integer "ability_id"
+=======
+  create_table "ability_characters", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "character_skills", force: :cascade do |t|
+    t.integer "character"
+    t.integer "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> c3170e446668909850906cc009a950e9603b1448
   end
 
   create_table "characters", force: :cascade do |t|
