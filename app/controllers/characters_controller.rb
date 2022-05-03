@@ -1,14 +1,14 @@
 class CharactersController < ApplicationController
   def index
     respond_to do |format| 
-      format.json { render json: Character.all }
+      format.json { render json: Character.all.select(:id, :name, :role, :level, :race) }
     end 
   end
 
   def show
     respond_to do |format| 
-      character = Character.where(id: params[:id]).select(:name, :role, :level, :race, :hitpoints)
-      format.json { render json: character.map{ |e| {name: e.name, role: e.role, level: e.level, race: e.race, hitpoints: e.hitpoints} }[0] }
+      characters = Character.where(id: params[:id]).select(:name, :role, :level, :race, :hitpoints)
+      format.json { render json: characters.map{ |e| {name: e.name, role: e.role, level: e.level, race: e.race, hitpoints: e.hitpoints} }[0] }
     end 
   end
 
