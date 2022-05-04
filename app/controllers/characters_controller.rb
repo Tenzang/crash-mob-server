@@ -1,7 +1,10 @@
 class CharactersController < ApplicationController
+  include CurrentUserConcern
+
   def index
+    characters = @current_user.characters
     respond_to do |format| 
-      format.json { render json: Character.all.select(:id, :name, :role, :level, :race) }
+      format.json { render json: characters.select(:id, :name, :role, :level, :race) }
     end 
   end
 
@@ -10,6 +13,11 @@ class CharactersController < ApplicationController
       characters = Character.where(id: params[:id]).select(:name, :role, :level, :race, :hitpoints)
       format.json { render json: characters.map{ |e| {name: e.name, role: e.role, level: e.level, race: e.race, hitpoints: e.hitpoints} }[0] }
     end 
+  end
+
+  def library
+    user=@current_user.id
+    # change this bit
   end
 
   def new
@@ -27,7 +35,9 @@ class CharactersController < ApplicationController
     redirect_to users_new_path
   end
 
-  def delete
+  def destroy
+    character = Character.find params[:id]
+    character.destroy
   end
 
   private

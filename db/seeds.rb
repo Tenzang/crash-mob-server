@@ -52,9 +52,12 @@ score3 = Score.create :strength => 11, :dexterity => 11, :constitution => 18, :i
 score4 = Score.create :strength => 11, :dexterity => 11, :constitution => 18, :intelligence => 14, :wisdom => 7, :charisma => 18
 
 char1.skills << athl << dece << inti << inve << perc 
-char1.abilities << wis << cha 
-char1.save
-char2.save
+char1.abilities << str << int
+char2.abilities << str << int
+char3.abilities << str << int
+char4.abilities << str << int
+char1.save 
+char2.save 
 char3.save
 char4.save
 
