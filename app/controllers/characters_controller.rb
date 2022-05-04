@@ -16,15 +16,11 @@ class CharactersController < ApplicationController
   end
 
   def create
-    # make new character with user input
-    character = Character.new character_params
-    # make new ability with user input
-    score = Score.create score_params
-    # associate score with character
-    character.score = score
+    # maxHealth = hitDice + modifier + ((hitDice / 2 + 1) + modifier * (level - 1)); 
+    p params
+    puts "constitution score" + params['abilities']['constitution'].to_s
+    character = Character.new(character_params)
     character.save
-
-    redirect_to users_new_path
   end
 
   def delete
@@ -32,7 +28,7 @@ class CharactersController < ApplicationController
 
   private
   def character_params
-    params.require(:character).permit(:name, :class, :level, :race, :hitpoints)
+    params.require(:character).permit(:name, :role, :level, :race)
   end
 
   def score_params
