@@ -24,10 +24,20 @@ class CharactersController < ApplicationController
   end
 
   def create
-    # maxHealth = hitDice + modifier + ((hitDice / 2 + 1) + modifier * (level - 1)); 
-    p params
-    puts "constitution score" + params['abilities']['constitution'].to_s
+
+    # Calculates Max Hit Points
+    constitution = params['abilities'][2]
+    modifier = ((constitution - 10) / 2).floor
+    level = params['level']
+    hitDice = params['hit_dice']
+
+    hitpoints = hitDice + modifier + ((hitDice / 2 + 1) + modifier * (level.to_i - 1))
+
     character = Character.new(character_params)
+    character.hitpoints = hitpoints
+
+    @current_user.characters << character
+
     character.save
   end
 
