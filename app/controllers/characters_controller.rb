@@ -4,7 +4,7 @@ class CharactersController < ApplicationController
   def index
     characters = @current_user.characters
     respond_to do |format| 
-      format.json { render json: characters.select(:id, :name, :role, :level, :race) }
+      format.json { render json: characters.select(:id, :name, :role, :level, :race, :image) }
     end 
   end
 
@@ -21,6 +21,7 @@ class CharactersController < ApplicationController
   end
 
   def new
+    
   end
 
   def create
