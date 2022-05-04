@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get :logged_in, to: "sessions#logged_in"
   get 'users/new'
 
+  get 'characters/library' => 'characters#library'
+
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
   resources :characters, :only => [:index, :show, :new, :create, :update, :destroy]

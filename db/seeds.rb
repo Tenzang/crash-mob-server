@@ -11,31 +11,31 @@ Score.destroy_all
 Skill.destroy_all
 Ability.destroy_all
 
-acro = Skill.create :name => 'Acrobatics'
-anim = Skill.create :name => 'Animal Handling'
-arca = Skill.create :name => 'Arcana' 
-athl = Skill.create :name => 'Athletics'
-dece = Skill.create :name => 'Deception'
-hist = Skill.create :name => 'History'
-insi = Skill.create :name => 'Insight' 
-inti = Skill.create :name => 'Intimidation'
-inve = Skill.create :name => 'Investigation'
-medi = Skill.create :name => 'Medicine'
-natu = Skill.create :name => 'Nature' 
-perc = Skill.create :name => 'Perception'
-perf = Skill.create :name => 'Performance'
-pers = Skill.create :name => 'Persuasion'
-reli = Skill.create :name => 'Religion' 
-slei = Skill.create :name => 'Sleight of Hand'
-stea = Skill.create :name => 'Stealth' 
-surv = Skill.create :name => 'Survival'
+acro = Skill.create :name => 'acrobatics'
+anim = Skill.create :name => 'animal handling'
+arca = Skill.create :name => 'arcana' 
+athl = Skill.create :name => 'athletics'
+dece = Skill.create :name => 'deception'
+hist = Skill.create :name => 'history'
+insi = Skill.create :name => 'insight' 
+inti = Skill.create :name => 'intimidation'
+inve = Skill.create :name => 'investigation'
+medi = Skill.create :name => 'medicine'
+natu = Skill.create :name => 'nature' 
+perc = Skill.create :name => 'perception'
+perf = Skill.create :name => 'performance'
+pers = Skill.create :name => 'persuasion'
+reli = Skill.create :name => 'religion' 
+slei = Skill.create :name => 'sleight of hand'
+stea = Skill.create :name => 'stealth' 
+surv = Skill.create :name => 'survival'
 
-str = Ability.create :name => 'Strength'
-dex = Ability.create :name => 'Dexterity'
-con = Ability.create :name => 'Constitution'
-int = Ability.create :name => 'Intelligence'
-wis = Ability.create :name => 'Wisdom'
-cha = Ability.create :name => 'Charisma'
+str = Ability.create :name => 'strength'
+dex = Ability.create :name => 'dexterity'
+con = Ability.create :name => 'constitution'
+int = Ability.create :name => 'intelligence'
+wis = Ability.create :name => 'wisdom'
+cha = Ability.create :name => 'charisma'
 
 puts "#{Skill.count} skills created"
 puts "#{Ability.count} Abilities created"
@@ -52,9 +52,12 @@ score3 = Score.create :strength => 11, :dexterity => 11, :constitution => 18, :i
 score4 = Score.create :strength => 11, :dexterity => 11, :constitution => 18, :intelligence => 14, :wisdom => 7, :charisma => 18
 
 char1.skills << athl << dece << inti << inve << perc 
-char1.abilities << wis << cha 
-char1.save
-char2.save
+char1.abilities << str << int
+char2.abilities << str << int
+char3.abilities << str << int
+char4.abilities << str << int
+char1.save 
+char2.save 
 char3.save
 char4.save
 
