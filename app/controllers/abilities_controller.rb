@@ -6,10 +6,5 @@ class AbilitiesController < ApplicationController
             format.json { render json: abilities.map { |a| a.name } }
         end
    end 
-    
-
-    def create
-    end
-
   end
   

@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
- 
   root to: "static#home"
+  
   delete :logout, to: "sessions#logout"
   get :logged_in, to: "sessions#logged_in"
-  get 'users/new'
-
-  get 'characters/library' => 'characters#library'
 
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
@@ -13,5 +10,6 @@ Rails.application.routes.draw do
   resources :scores, :only => [:show] 
   resources :skills, :only => [:show]
   resources :abilities, :only => [:show]
+  resources :currency, :only => [:show]
 
 end

@@ -56,6 +56,15 @@ char1.abilities << str << int
 char2.abilities << str << int
 char3.abilities << str << int
 char4.abilities << str << int
+
+# Currency
+Currency.destroy_all
+char1.currency = Currency.create
+char2.currency = Currency.create
+char3.currency = Currency.create
+char4.currency = Currency.create
+puts "#{Currency.count} wallets created."
+
 char1.save 
 char2.save 
 char3.save
@@ -70,4 +79,4 @@ u1.characters << char1 << char2
 u2.characters << char3 << char4
 
 puts "#{Character.count} characters created."
-puts "#{Score.count} score lists successfully created."
+puts "#{Score.count} score lists created."

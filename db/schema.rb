@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_04_012434) do
+ActiveRecord::Schema.define(version: 2022_05_04_222208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,11 +36,29 @@ ActiveRecord::Schema.define(version: 2022_05_04_012434) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "image"
+    t.integer "hit_dice"
+    t.integer "dSaveSucc"
+    t.integer "dSaveFail"
+    t.text "speed"
+    t.text "languages"
+    t.boolean "inspiration"
+    t.integer "xp"
+    t.text "equipment"
+    t.integer "tempHP"
+    t.integer "currency_id"
   end
 
   create_table "characters_skills", force: :cascade do |t|
     t.integer "character_id"
     t.integer "skill_id"
+  end
+
+  create_table "currencies", force: :cascade do |t|
+    t.integer "cp", default: 0
+    t.integer "sp", default: 0
+    t.integer "gp", default: 0
+    t.integer "ep", default: 0
+    t.integer "pp", default: 0
   end
 
   create_table "scores", force: :cascade do |t|
