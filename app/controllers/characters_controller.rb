@@ -25,16 +25,43 @@ class CharactersController < ApplicationController
   end
 
   def create
+    p params
+    character = Character.new(character_params)
 
-    # Calculates Max Hit Points
+    # Scores
+    score = Score.new
+
+    strength = params['abilities'][0]
+    score.strength = strength
+
+    dexterity = params['abilities'][1]
+    score.dexterity = dexterity
+
     constitution = params['abilities'][2]
+    score.constitution = constitution
+
+    intelligence = params['abilities'][3]
+    score.intelligence = intelligence
+
+    wisdom = params['abilities'][4]
+    score.wisdom = wisdom
+
+    charisma = params['abilities'][5]    
+    score.charisma = charisma
+
+    score.save
+    character.score = score
+    
+    # Proficiencies
+
+
+    # Calculates Max Hit Points-------
     modifier = ((constitution - 10) / 2).floor
     level = params['level']
     hitDice = params['hit_dice']
-
     hitpoints = hitDice + modifier + ((hitDice / 2 + 1) + modifier * (level.to_i - 1))
+    #---------------------------------
 
-    character = Character.new(character_params)
     character.hitpoints = hitpoints
 
     @current_user.characters << character
