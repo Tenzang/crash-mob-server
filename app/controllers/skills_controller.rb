@@ -6,8 +6,4 @@ class SkillsController < ApplicationController
         format.json { render json: skills.map { |s| s.name } }
     end
   end
-
-  def create
-  end
-
 end

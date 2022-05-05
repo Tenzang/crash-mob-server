@@ -91,4 +91,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # URL environment variable
+  ENV['sourceURL'] = "https://crash-mob.netlify.app/"
 end

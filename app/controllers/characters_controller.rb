@@ -16,7 +16,6 @@ class CharactersController < ApplicationController
   end
 
   def create
-    p params
     character = Character.new(character_params)
 
     # Scores
