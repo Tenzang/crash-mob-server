@@ -61,4 +61,5 @@ Rails.application.configure do
 
   # URL environment variable
   ENV['sourceURL'] = "http://localhost:3001"
+  ENV['resourceURL'] = "*"
 end

@@ -94,4 +94,5 @@ Rails.application.configure do
 
   # URL environment variable
   ENV['sourceURL'] = "https://crash-mob.netlify.app"
+  ENV['resourceURL'] = "https://crash-mob2.herokuapp.com"
 end
