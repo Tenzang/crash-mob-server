@@ -60,5 +60,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # URL environment variable
-  ENV['sourceURL'] = "http://localhost:3000/"
+  ENV['sourceURL'] = "http://localhost:3001"
 end

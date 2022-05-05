@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # URL environment variable
-  ENV['sourceURL'] = "https://crash-mob.netlify.app/"
+  ENV['sourceURL'] = "https://crash-mob.netlify.app"
 end
