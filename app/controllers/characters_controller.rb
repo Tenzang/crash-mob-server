@@ -21,7 +21,7 @@ class CharactersController < ApplicationController
   end
 
   def new
-    
+
   end
 
   def create
@@ -49,7 +49,7 @@ class CharactersController < ApplicationController
 
   private
   def character_params
-    params.require(:character).permit(:name, :role, :level, :race)
+    params.require(:character).permit(:name, :role, :level, :race, :image)
   end
 
   def score_params
