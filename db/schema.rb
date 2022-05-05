@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(version: 2022_05_04_222208) do
     t.text "equipment"
     t.integer "tempHP"
     t.integer "currency_id"
+    t.text "ideals"
+    t.text "bonds"
+    t.text "flaws"
   end
 
   create_table "characters_skills", force: :cascade do |t|

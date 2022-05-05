@@ -9,9 +9,9 @@ class AddDetailsToCharacters < ActiveRecord::Migration[5.2]
     add_column :characters, :xp, :integer
     add_column :characters, :equipment, :text
     add_column :characters, :tempHP, :integer
-    add_column :characters, :currency_id, :integer,
-    add_column :characters, :ideals, :text,
-    add_column :characters, :bonds, :text,
-    add_column :characters, :flaws, :text,
+    add_column :characters, :currency_id, :integer
+    add_column :characters, :ideals, :text
+    add_column :characters, :bonds, :text
+    add_column :characters, :flaws, :text
   end
 end
