@@ -82,7 +82,7 @@ class CharactersController < ApplicationController
 
   private
   def character_params
-    params.require(:character).permit(:name, :role, :level, :race, :image, :hit_dice, :equipment)
+    params.require(:character).permit(:name, :role, :level, :race, :image, :hit_dice, :equipment, :bonds, :flaws, :ideals, :personality)
   end
 
   def score_params
