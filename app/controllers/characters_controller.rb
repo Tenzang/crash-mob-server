@@ -10,8 +10,8 @@ class CharactersController < ApplicationController
 
   def show
     respond_to do |format| 
-      characters = Character.where(id: params[:id]).select(:name, :role, :level, :race, :hitpoints, :image, :languages, :hit_dice, :dSaveSucc, :dSaveFail, :speed, :languages, :inspiration, :xp, :equipment, :tempHP, :ideals, :bonds, :flaws )
-      format.json { render json: characters.map{ |e| {name: e.name, role: e.role, level: e.level, race: e.race, hitpoints: e.hitpoints, image: e.image, languages: e.languages, hit_dice: e.hit_dice} }[0] }
+      characters = Character.where(id: params[:id]).select(:name, :role, :level, :race, :hitpoints, :image, :languages, :hit_dice, :dSaveSucc, :dSaveFail, :speed, :inspiration, :xp, :equipment, :tempHP, :ideals, :bonds, :flaws )
+      format.json { render json: characters.map{ |e| {name: e.name, role: e.role, level: e.level, race: e.race, hitpoints: e.hitpoints, image: e.image, languages: e.languages, hit_dice: e.hit_dice, dSaveSucc: e.dSaveSucc, dSaveFail: e.dSaveFail, speed: e.speed, inspiration: e.inspiration, xp: e.xp , equipment: e.equipment, tempHP: e.tempHP, ideals: e.ideals, bonds: e.bonds, flaws: e.flaws } }[0] }
     end 
   end
 
