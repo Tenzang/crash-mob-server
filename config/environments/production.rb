@@ -93,6 +93,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # URL environment variable
+  config.action_dispatch.cookies_same_site_protection = :None
   ENV['sourceURL'] = "https://crash-mob.netlify.app"
   ENV['resourceURL'] = "https://crash-mob2.herokuapp.com"
 end
