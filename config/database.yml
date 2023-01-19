@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: crash-mob-server_production
   username: crash-mob-server
   password: <%= ENV['CRASH-MOB-SERVER_DATABASE_PASSWORD'] %>
