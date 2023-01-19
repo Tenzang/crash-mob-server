@@ -95,5 +95,5 @@ Rails.application.configure do
   # URL environment variable
   config.action_dispatch.cookies_same_site_protection = :None
   ENV['sourceURL'] = "https://crash-mob.netlify.app"
-  ENV['resourceURL'] = "https://crash-mob2.herokuapp.com"
+  ENV['resourceURL'] = "https://crashmobserver.onrender.com"
 end
